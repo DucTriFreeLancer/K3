@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <DATA>
   <!--  Database info -->
-  <SERVER>ADMIN</SERVER>
-  <NAME>k3</NAME>
-  <USERID>sa</USERID>
-  <PASSWORD>w0O5tQ2nhLs=</PASSWORD>
-  <PRINTER>Microsoft XPS Document Writer</PRINTER>
-  <PRINTERBILL>Send To OneNote 2007</PRINTERBILL>
+  <SERVER>125.212.221.110,1433</SERVER>
+  <NAME>tracuukara_maudon</NAME>
+  <USERID>tracuukara_maudon</USERID>
+  <PASSWORD>J2hg2smKlMyFY9frJf9o8g==</PASSWORD>
+  <PRINTER>XP-80C</PRINTER>
+  <PRINTERBILL>XP-80C</PRINTERBILL>
   <!-- Connect to Scale COM Port info -->
   <Scale-Config>
     <PortName>COM5</PortName>

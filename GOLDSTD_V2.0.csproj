@@ -324,9 +324,9 @@
     <Reference Include="RS232, Version=1.24.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81">
       <HintPath>DLL\RS232.dll</HintPath>
     </Reference>
-    <Reference Include="ScrollingTextControl, Version=1.0.4659.18104, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ScrollingTextControl, Version=1.0.4904.30104, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>ScrollingTextControl\bin\Debug\ScrollingTextControl.dll</HintPath>
+      <HintPath>DLL\ScrollingTextControl.dll</HintPath>
     </Reference>
     <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <HintPath>packages\CrystalReports.FlashControlV71.13.0.3501\lib\net20\ShockwaveFlashObjects.dll</HintPath>
@@ -334,7 +334,7 @@
     </Reference>
     <Reference Include="Super, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Super.dll</HintPath>
+      <HintPath>DLL\Super.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -349,9 +349,9 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebCam_Capture, Version=1.0.4455.17320, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WebCam_Capture, Version=1.0.4904.30100, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>WEBCAM\bin\Debug\WebCam_Capture.dll</HintPath>
+      <HintPath>DLL\WebCam_Capture.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1828,8 +1828,11 @@
     <Content Include="DLL\Microsoft.ApplicationBlocks.Data.dll" />
     <Content Include="DLL\PDUConverter.dll" />
     <Content Include="DLL\RS232.dll" />
+    <Content Include="DLL\ScrollingTextControl.dll" />
     <Content Include="DLL\Seagull.BarTender.Print.dll" />
     <Content Include="DLL\Seagull.Interop.dll" />
+    <Content Include="DLL\Super.dll" />
+    <Content Include="DLL\WebCam_Capture.dll" />
     <Content Include="icon\maudon.png" />
     <Content Include="pmv128x128.ico" />
     <None Include="Query\frmQueryCust.resx.bak" />
