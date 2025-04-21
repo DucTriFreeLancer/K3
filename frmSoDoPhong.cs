@@ -112,7 +112,6 @@ namespace SuperX
         void item_ItemClick(object sender, TileItemEventArgs e)
         {
             magd = (sender as TileItem).Tag.ToString();
-
             room = (sender as TileItem).Name;
             tienphong = (sender as TileItem).Id;
             tenphong = (sender as TileItem).Text;
@@ -274,8 +273,7 @@ namespace SuperX
                     ThemMon(index, dSLMoi);
                     TinhTienHoaDon();
                 }
-                Save();
-                SaveBep("1");
+                Save("1");
             }
         }
         private void TinhTienHoaDon()
@@ -313,6 +311,7 @@ namespace SuperX
                 txtTotal.EditValue = dTienGio + dTienHang + dDisCount;
 
                 Save();
+
             }
         }
 
@@ -435,10 +434,10 @@ namespace SuperX
                 else
                 {
                     ThemMon(index, dSLMoi);
+                    grvThucDon.UpdateCurrentRow();
                     TinhTienHoaDon();
                 }
-                Save();
-                SaveBep("1");
+                Save("1");
             }
         }
 
@@ -462,13 +461,12 @@ namespace SuperX
                 TinhTienHoaDon();
                 if (!string.IsNullOrEmpty(magd))
                 {
-                    Save();
-                    SaveBep("2");
+                    Save("2");
                 }
             }
         }
 
-        private void Save()
+        private void Save(string loaiinbep = "")
         {
             if (isLoading)
                 return;
@@ -516,11 +514,39 @@ namespace SuperX
                 }
 
                 ds = clsCommon.ExecuteDatasetSP("CHITIETHOADONBANHANG_INS", magd, strGoldCode, strGoldDesc, strPriceUnit, strPriceCcy, strSectionID, strSellRate, strSL, strSellAmount);
+                if (ds != null && ds.Tables[0].Rows[0]["ErrCode"].ToString() == "0")
+                {
+                    if(!string.IsNullOrEmpty(loaiinbep)) SaveBep(loaiinbep);
+
+                }
             }
-            InitSoDoPhong();
+            UpdateRoomTile(roomId: room, maHD: magd);
             EnabledChucNang(true);
         }
-
+        private void UpdateRoomTile(string roomId, string maHD)
+        {
+            foreach (TileGroup group in tileControl1.Groups)
+            {
+                foreach (TileItem item in group.Items)
+                {
+                    if (item.Name == roomId) // Check if the tile corresponds to the updated room
+                    {
+                        item.Tag = maHD; // Update the tag (or any other property, such as color or text)
+                        item.AppearanceItem.Normal.BackColor = string.IsNullOrEmpty(maHD) ? Color.DarkGreen : Color.Red; // Change color or appearance based on the status
+                        item.AppearanceItem.Normal.Font = new Font(FontFamily.GenericSerif, 12, FontStyle.Bold);
+                        item.AppearanceItem.Hovered.Font = item.AppearanceItem.Normal.Font;
+                        item.AppearanceItem.Selected.Font = item.AppearanceItem.Normal.Font;
+                        item.TextAlignment = TileItemContentAlignment.TopCenter;
+                        item.AppearanceItem.Normal.BackColor = !string.IsNullOrEmpty(maHD) ? Color.Red : Color.DarkGreen;
+                        item.AppearanceItem.Hovered.BackColor = item.AppearanceItem.Normal.BackColor;
+                        item.AppearanceItem.Selected.BackColor = item.AppearanceItem.Normal.BackColor;
+                        //item.Image = !string.IsNullOrEmpty(dr["MAHD"] + "") ? Resources._1454839877_Open_Sign : Resources._1454839955_closed_shop_black_friday_sale_store;
+                        item.ImageAlignment = TileItemContentAlignment.MiddleCenter;
+                        break;
+                    }
+                }
+            }
+        }
         private void SaveBep(string loai)
         {
             if (isLoading)
@@ -956,8 +982,7 @@ namespace SuperX
                 dThanhTien = dSL * dGiaBan;
                 UpdateMon(grvThucDon.FocusedRowHandle, speSL.Value);
                 TinhTienHoaDon();
-                Save();
-                SaveBep("2");
+                Save("2");
             }
         }
 
@@ -1127,8 +1152,7 @@ namespace SuperX
                     grvThucDon.AddNewRow();
                     grvThucDon.UpdateCurrentRow();
                     TinhTienHoaDon();
-                    Save();
-                    SaveBep("1");
+                    Save("1");
                 }
             }
         }
