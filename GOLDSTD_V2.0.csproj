@@ -95,25 +95,21 @@
     <Reference Include="Clockwork">
       <HintPath>packages\Clockwork.2.0.0\lib\Clockwork.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>DLL\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\CrystalDecisions.ReportSource.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>DLL\CrystalDecisions.ReportSource.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\CrystalDecisions.Shared.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>DLL\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>DLL\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=10.9.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04">
       <Private>True</Private>
@@ -277,9 +273,9 @@
     <Reference Include="RS232, Version=1.24.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81">
       <HintPath>DLL\RS232.dll</HintPath>
     </Reference>
-    <Reference Include="ScrollingTextControl, Version=1.0.4659.18104, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ScrollingTextControl, Version=1.0.4904.30104, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>ScrollingTextControl\bin\Debug\ScrollingTextControl.dll</HintPath>
+      <HintPath>bin\Debug\ScrollingTextControl.dll</HintPath>
     </Reference>
     <Reference Include="Super, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -298,13 +294,13 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebCam_Capture, Version=1.0.4455.17320, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="WebCam_Capture, Version=1.0.4904.30100, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>WEBCAM\bin\Debug\WebCam_Capture.dll</HintPath>
+      <HintPath>bin\Debug\WebCam_Capture.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backup\Report\Reports\rptSRT_PrintBill.cs">
+    <Compile Include="Report\Reports\rptSRT_PrintBill.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptSRT_PrintBill.rpt</DependentUpon>
@@ -1067,10 +1063,6 @@
     <Compile Include="Messages\ThongBao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Backup\Report\Reports\rptSRT_PrintBill.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptSRT_PrintBill.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customer\Controls\ucPOStatisticLst.resx">
       <DependentUpon>ucPOStatisticLst.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -1351,7 +1343,6 @@
       <DependentUpon>frm_TransferStorage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1777,6 +1768,10 @@
     <Content Include="config.xml" />
     <Content Include="configBangDienTu.xml" />
     <Content Include="DLL\Autorit.dll" />
+    <Content Include="DLL\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="DLL\CrystalDecisions.ReportSource.dll" />
+    <Content Include="DLL\CrystalDecisions.Shared.dll" />
+    <Content Include="DLL\CrystalDecisions.Windows.Forms.dll" />
     <Content Include="DLL\DevComponents.DotNetBar2.dll" />
     <Content Include="DLL\GSMCommShared.dll" />
     <Content Include="DLL\GSMCommunication.dll" />
@@ -1849,6 +1844,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Backup\Report\Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
